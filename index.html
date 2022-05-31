@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Urian Viera :: WebDeveloper</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo-mywebsite-urian-viera.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="assets/css/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/loader.css">
+   
+</head>
+    <body>
+        <header>
+          <div class="contenedor_header">
+              <ul class="flex-container">
+                <li class="flex-item"></li>
+                <li class="flex-item">
+                  <p>
+                    <strong>
+                    WebDeveloper - Urian Viera 😀 👍
+                    </strong>
+                  </p>
+                </li>
+                <li class="flex-item"></li>
+              </ul>
+          </div>
+        </header>
+
+        <div id="demo-content">
+          <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+          <div id="content"> </div>
+        </div>
+
+
+
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="mt-5">Direfencia entre <strong>setTimeout</strong> vs <strong>setInterval</strong> </h1>
+            </div>
+            </div>
+        </div>
+        
+
+      <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center" style="padding:100px 0px;">
+              
+                <div id="suma_setInterval"> - - ---</div>
+                <div id="dataPost"> .. . ... .... </div>
+
+              </div>
+            </div>
+          </div>
+      </section>
+
+
+
+    <footer class="footer grey darken-4">
+      <div class="container center" style="padding-top: 5px;">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-5">
+          &copy; Visita mis Redes - 2022 WebDeveloper
+          </div>
+          <div class="col-md-auto">
+            <a href="https://www.youtube.com/c/WebDeveloperUrianViera/videos" target="_blank" title="Visitar Youtube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://github.com/urian121" target="_blank" title="Visitar Github">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/urian-viera-a930859b/" target="_blank" title="Visitar Linkedin">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://blogangular-c7858.web.app/" target="_blank" title="Visitar Portafolio">
+              <i class="bi bi-briefcase"></i>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="assets/js/material.min.js"></script>
+  <script>
+  $(function() {
+      setTimeout(function(){
+        $('body').addClass('loaded');
+      }, 1000);
+  });
+
+    /**
+    setTimeout: nos permite ejecutar solo una vez una función después del intervalo de tiempo
+    setInterval: nos permite ejecutar una función repetidamente, comenzando después del intervalo de tiempo,
+    luego repitiéndose continuamente en ese intervalo.
+    **/
+
+
+    var suma = 0;
+    var bucle = setInterval(function(){
+        suma++;
+        console.log(suma);
+        $("#suma_setInterval").html(suma);
+        if(suma == 3){
+            suma = 0; //Reinicio el conteo nuevamente
+            // clearInterval(bucle); //clearInterval() sirve para detener el bucle
+        }
+    },1000);
+
+    /*      
+    function atualizar(){
+          $.post('ejemplo.html', function (data) {
+                $('#dataPost').html(data);
+              });
+          }
+        //setInterval(atualizar, 500);
+      setInterval("atualizar()", 2000);
+*/
+
+
+    //Se ejecutará solo una vez
+  /*  
+  function saludarAmigo() {
+      console.log('%c Hola mi Comunidad!, No olvides Suscribirte amigo', "background-color:green; color:#fff; padding: 3px 5px;");
+    }
+    setTimeout(saludarAmigo, 2000);
+  */
+
+    //Se ejecutará solo una vez, usando funcion de flecha
+    var nombre ='Urian Viera';
+    setTimeout(
+      () => { console.log(`Hola soy ${this.nombre}!`); }, 1000
+    );
+
+
+    //Optimizando una función de flecha
+    setTimeout(function(){ console.log("Hola amigos..!"); }, 3000);
+
+
+    //se ejecutará solo una vez
+    setTimeout(function(){
+        console.log("Urian Viera!"); 
+    }, 2000);
+
+
+    //Se ejecutará solo una vez
+    ActivarTiempo();
+    function ActivarTiempo(){
+      setTimeout(Mensaje,2000);
+    }
+    function Mensaje(){
+      console.log("Hola Comunidad WebDeveloper=)!");
+    }
+
+</script>
+
+
+</body>
+</html>
